@@ -14,5 +14,5 @@ class CategoryItem:
         return set(prepared_name.lower().split(' '))
 
     def check(self, name):
-        checkable_name_words = self.get_name_words(name)
-        return len(self.name_words.difference(checkable_name_words)) == 0
+        given_name_words = self.get_name_words(name)
+        return len(self.name_words.difference(given_name_words)) == 0

@@ -1,5 +1,5 @@
 import unittest
-from category_item import CategoryItem
+from app.models.category_item import CategoryItem
 
 
 class TestCategoryItem(unittest.TestCase):
@@ -21,4 +21,6 @@ class TestCategoryItem(unittest.TestCase):
 
     def test_check(self):
         self.assertTrue(CategoryItem('рецепт борща').check('Борща любимого рецепт'))
+        self.assertTrue(CategoryItem('рецепт борща').check('Борща рецепт'))
+        self.assertTrue(CategoryItem('рецепт борща').check('Борща ,рецепт'))
         self.assertFalse(CategoryItem('рецепт борща корейского').check('Борща любимого рецепт'))

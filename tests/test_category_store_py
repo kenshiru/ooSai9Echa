@@ -1,0 +1,45 @@
+import unittest
+from app.models.category import Category
+from app.models.category_item import CategoryItem
+
+
+class TestCategory(unittest.TestCase):
+    """
+    CASES = {
+        "новости": [
+            "Деревья на садовом кольце",
+            "добрый автобус",
+            "выставка IT-технологий"
+        ],
+        "кухня": [
+            "рецепт борща",
+            "яблочный пирог",
+            "тайская кухня"
+        ],
+        "товары": [
+            "Дети капитана Гранта",
+            "зимние шины",
+            "тайская кухня"
+        ]
+    }
+    """
+
+    CATEGORY_ITEMS = [
+        "рецепт борща",
+        "яблочный пирог",
+        "тайская кухня"
+    ]
+
+
+    def setUp(self):
+        self.categories = {}
+        for category_name, category_items in self.CASES.items():
+            if not self.categories.get(category_name):
+                self.categories[category_name] = Category(category_name)
+
+            for item_name in category_items:
+                self.categories[category_name].add_item(CategoryItem(item_name))
+
+
+a = TestCategory()
+a.setUp()
