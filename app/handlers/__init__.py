@@ -1,1 +1,1 @@
-from .categies_handler import categories_handler
+from .categories_by_phrase_handler import categories_by_phrase_handler
