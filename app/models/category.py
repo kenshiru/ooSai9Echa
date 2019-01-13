@@ -2,6 +2,9 @@ from app.models.category_item import CategoryItem
 
 
 class Category:
+    """
+    Category model
+    """
     def __init__(self, name: str):
         """
         Set name and declate items attributes

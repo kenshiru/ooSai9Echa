@@ -1,24 +1,11 @@
-from app.models.category import Category
-from app.models.category_item import CategoryItem
-from app.models.categories_collection import CategoriesCollection
+"""
+Filled from categories-collection.json storage
+Import categories_collection from here
+"""
+import json
+from app.models import Category, CategoryItem, CategoriesCollection
 
-CATEGORIES = {
-    "новости": [
-        "Деревья на садовом кольце",
-        "добрый автобус",
-        "выставка IT-технологий"
-    ],
-    "кухня": [
-        "рецепт борща",
-        "яблочный пирог",
-        "тайская кухня"
-    ],
-    "товары": [
-        "Дети капитана Гранта",
-        "зимние шины",
-        "тайская кухня"
-    ]
-}
+CATEGORIES = json.load(open('./categories-collection.json'))
 
 categories_collection = CategoriesCollection()
 
